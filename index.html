@@ -82,7 +82,7 @@
         width: 100%;
         display: none;
         z-index: 1;
-        padding-left: 15px !important;
+        padding-left: 42px !important;
         padding-top: 10px;
         padding-bottom: 15px;
         padding-right: 15px;
@@ -129,13 +129,19 @@
       }
    
       .openCatalog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
+        width: 24px;
+        height: 24px;
       }
       .openCatalog::before,
       .openCatalog::after {
         content: '';
         position: absolute;
         background-color: #000;
+        
       }
       .openCatalog::before {
         width: 12px;
@@ -308,7 +314,6 @@
                                                     <use xlink:href="sites/all/themes/antica_mini/img/sprite.svg"></use>
                                                 </svg>- под мрамор
                                                 </div>
-                                                <button class="openCatalog"></button>
                                             </a>
                                 </li>
                                 <div class="header__catalog__submenu">

@@ -17169,7 +17169,7 @@ $(function () {
               this.classList.toggle("active");
               // закрытие неактивных пунктов
               razdels.forEach((otherElement) => {
-                if (otherElement !== element) {
+                if (otherElement !== element && otherElement.classList.contains("active")) {
                   otherElement.nextElementSibling.classList.remove("active");
                   otherElement.classList.remove("active");
                 }
@@ -17177,7 +17177,6 @@ $(function () {
             }
           });
         });
-
         let toggleBtn = document.querySelectorAll(".openCatalog");
         toggleBtn.forEach((element) => {
           element.addEventListener("click", function (event) {

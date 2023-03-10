@@ -94,7 +94,7 @@
 
 
       .header__catalog__submenu.active {
-        display: block;
+        display: block !important;
       }
       .header__catalog__submenu .row {
         transform: scaleY(0);
@@ -141,6 +141,7 @@
         content: '';
         position: absolute;
         background-color: #000;
+        transition: all .25s;
         
       }
       .openCatalog::before {
@@ -162,6 +163,11 @@
 
     .notwork {
       display: none;
+    }
+
+    .podrazdel.active .openCatalog::after,
+    .razdel a.active .openCatalog::after {
+      transform: rotate(0);
     }
   </style>
   

@@ -17161,17 +17161,21 @@ $(function () {
 
       if (window.innerWidth <= 1199) {
         mobMenuCatalog.appendChild(mainCatalog);
-        //логика открытия пунктов меню
-        let razdels = document.querySelectorAll(".razdel a, .podrazdel");  
-        razdels.forEach((element) => {  
-          element.addEventListener("click", function (event) {  
-            if (!event.target.href) {  
-              razdels.forEach((el) =>  
-              el.nextElementSibling && el.nextElementSibling.classList.remove("active")  
-            );  
-              this.nextElementSibling && this.nextElementSibling.classList.toggle("active");  
-            }  
-          });  
+        let razdels = document.querySelectorAll(".razdel a, .podrazdel");
+        razdels.forEach((element) => {
+          element.addEventListener("click", function (event) {
+            if (!event.target.href) {
+              let razdels = document.querySelectorAll(".razdel a, .podrazdel");
+              razdels.forEach((element) => {
+                element.addEventListener("click", function (event) {
+                  if (!event.target.href) {
+                    element.nextElementSibling.classList.toggle("active");
+                    this.classList.toggle("active");
+                  }
+                });
+              });
+            }
+          });
         });
 
         let toggleBtn = document.querySelectorAll(".openCatalog");

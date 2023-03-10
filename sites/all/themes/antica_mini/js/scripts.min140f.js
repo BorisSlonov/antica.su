@@ -17165,14 +17165,14 @@ $(function () {
         razdels.forEach((element) => {
           element.addEventListener("click", function (event) {
             if (!event.target.href) {
-              let razdels = document.querySelectorAll(".razdel a, .podrazdel");
-              razdels.forEach((element) => {
-                element.addEventListener("click", function (event) {
-                  if (!event.target.href) {
-                    element.nextElementSibling.classList.toggle("active");
-                    this.classList.toggle("active");
-                  }
-                });
+              element.nextElementSibling.classList.toggle("active");
+              this.classList.toggle("active");
+              // закрытие неактивных пунктов
+              razdels.forEach((otherElement) => {
+                if (otherElement !== element) {
+                  otherElement.nextElementSibling.classList.remove("active");
+                  otherElement.classList.remove("active");
+                }
               });
             }
           });
